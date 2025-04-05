@@ -74,15 +74,15 @@
     radio.addEventListener('change', function() {
         const isStudent = this.value === 'student';
         
-        // Show/hide roll number field
+        
         document.getElementById('rollno-group').style.display = 
             isStudent ? 'block' : 'none';
             
-        // Show/hide session field
+        
         document.getElementById('session-group').style.display =
             isStudent ? 'block' : 'none';
             
-        // Update User ID label and placeholder
+        
         const useridLabel = document.getElementById('userid-label');
         const useridInput = document.getElementById('userid');
         if (isStudent) {
@@ -93,12 +93,12 @@
             useridInput.placeholder = '';
         }
         
-        // Update department label
+        
         document.getElementById('department-label').textContent =
             isStudent ? 'Department:' : 'Subject:';
     });
     
-    // Trigger change event on page load if teacher is selected by default
+  
     if (radio.value === 'teacher' && radio.checked) {
         radio.dispatchEvent(new Event('change'));
     }
